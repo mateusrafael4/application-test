@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login do Aluno</title>
+    <link rel="stylesheet" href="data/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script type="module" src="data/student-login.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Fundo escurecido que cobre a tela toda -->
+    <div class="modal-overlay">
+        
+        <!-- O card de login branco -->
+        <div class="login-modal">
+            
+            <!-- Ícone de Aluno -->
+            <div class="icon-container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+            </div>
+
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="ra">RA (Registro do Aluno)</label>
+                    <input type="text" id="ra" name="ra" required 
+                        inputmode="numeric" 
+                        pattern="\d{3}\.\d{3}\.\d{3}-\d{1}" 
+                        placeholder="000.000.000-0"
+                        maxlength="13"> 
+                    <p id="ra-error" class="error-message">Por favor, digite um RA válido no formato 000.000.000-0.</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" name="senha" required>
+                </div>
+
+                <button type="submit" class="btn-login">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                    <span>Entrar</span>
+                </button>
+            </form>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
